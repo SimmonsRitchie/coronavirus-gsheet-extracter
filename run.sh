@@ -4,8 +4,12 @@
 echo "Start cronjob"
 # Set paths
 export PYENV_ROOT=~/.pyenv
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:"$PATH"
 export PATH=~/.pyenv/shims:~/.pyenv/bin:"$PATH"
+export PATH="${HOME}/.pyenv/scripts:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+echo $PATH
 
 # Searching
 whereis pyenv
