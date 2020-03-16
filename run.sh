@@ -2,8 +2,8 @@
 # Cronjob script
 
 # Start
-printf "Cronjob run - Google sheet extract and move"
-echo $(date '+%Y-%m-%d')
+echo "Cronjob run - Google sheet extract and move"
+echo $(date '+%Y-%m-%d %H:%M:%S')
 # This tells pipenv to use this .env file
 export PIPENV_DOTENV_LOCATION="/home/dansr/projects/coronavirus_gs_extracter/.env"
 # Navigate to scraper project directory
