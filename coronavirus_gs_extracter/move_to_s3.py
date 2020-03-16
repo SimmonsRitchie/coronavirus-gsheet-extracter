@@ -5,11 +5,12 @@ from definitions import DIR_DATA
 
 
 def move_to_s3(sheet_name):
-    logging.info(f"Move {sheet_name} to s3")
-    local_file_path = DIR_DATA / f"{sheet_name}.csv"
+    filename = f"{sheet_name}.csv"
+    logging.info(f"Move {filename} to s3")
+    local_file_path = DIR_DATA / filename
 
     try:
-        # CHECK JSON PAYLOAD EXISTS
+        # CHECK FILE EXISTS
         if not local_file_path.is_file():
             logging.error(f"No file found at {local_file_path},"
             "aborting attempt to move file to S3.")
@@ -20,7 +21,8 @@ def move_to_s3(sheet_name):
         keyID = os.environ.get("KEY_ID")
         sKeyID = os.environ.get("SECRET_KEY_ID")
         source_path = str(local_file_path.resolve())
-        destination_path = os.environ.get("DESTINATION_PATH")
+        destination_dir = os.environ.get("DESTINATION_DIR")
+        destination_path = f"{destination_dir}/{filename}"
 
         # LOGGING
         logging.info(f"Moving {source_path} to S3 bucket {bucket_name}...")
