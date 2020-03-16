@@ -2,6 +2,7 @@ import requests
 from definitions import DIR_DATA
 import logging
 
+
 def download_sheet(sheet_name, sheet_id, gid):
     logging.info(f"Begin downloading sheet: {sheet_name}")
     s = requests.Session()
