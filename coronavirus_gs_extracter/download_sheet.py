@@ -14,4 +14,3 @@ def download_sheet(sheet_name, sheet_id, gid):
     with open(download_path, 'wb') as f:
         f.write(r.content)
         logging.info(f'{sheet_name} sheet downloaded as: {filename}')
-
