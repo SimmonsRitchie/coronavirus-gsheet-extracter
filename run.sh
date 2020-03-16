@@ -2,6 +2,10 @@
 
 # Start
 echo "Start cronjob"
+# Searching
+echo whereis pyenv
+echo whereis pipenv
+echo python --version
 # Set paths
 export PYENV_ROOT=~/.pyenv
 export PATH=~/.pyenv/shims:~/.pyenv/bin:"$PATH"
