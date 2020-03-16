@@ -3,7 +3,7 @@
 
 # Start
 echo "New cronjob test"
-~/.pyenv/bin
+~/.pyenv/bin/pyenv
 
 ## Set paths
 #export PYENV_ROOT=~/.pyenv
