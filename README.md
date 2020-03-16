@@ -25,6 +25,12 @@ dependencies. Run:
 
     `pipenv install`
 
+5. Copy .env.example and rename .env
+
+    `cp .env.example .env`
+
+6. Enter your AWS S3 credentials and other settings into .env
+
 #### Run
 
 From the terminal, make sure you're in the project directory. Run the following:
