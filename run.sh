@@ -15,7 +15,7 @@ export PIPENV_DOTENV_LOCATION="/home/dansr/projects/coronavirus_gs_extracter/.en
 # Navigate to scraper project directory
 cd /home/dansr/projects/coronavirus_gs_extracter/
 # Run program
-pipenv run python coronavirus_gs_extracter.py
+~/.pyenv/versions/3.6.10/bin/pipenv run ~/.pyenv/versions/3.6.10/python3.6 coronavirus_gs_extracter.py
 # /home/dansr/.pyenv/shims/pipenv
 
 #export PATH="/home/dansr/.pyenv/bin:$PATH"
