@@ -1,6 +1,4 @@
-#!/bin/bash
 # Cronjob script
-
 
 # Start
 echo "Start cronjob"
