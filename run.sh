@@ -2,13 +2,15 @@
 
 # Start
 echo "Start cronjob"
+# Set paths
+export PYENV_ROOT=~/.pyenv
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=~/.pyenv/shims:~/.pyenv/bin:"$PATH"
+
 # Searching
 whereis pyenv
 whereis pipenv
 python --version
-# Set paths
-export PYENV_ROOT=~/.pyenv
-export PATH=~/.pyenv/shims:~/.pyenv/bin:"$PATH"
 # Start pyenv shell
 pyenv shell 3.6.10
 # This tells pipenv to use this .env file
