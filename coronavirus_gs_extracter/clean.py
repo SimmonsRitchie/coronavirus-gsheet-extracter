@@ -2,6 +2,7 @@ from definitions import DIR_DATA
 import os
 import shutil
 
+
 def clean_data():
     # create or clean up PDF download dir
     if DIR_DATA.is_dir():
