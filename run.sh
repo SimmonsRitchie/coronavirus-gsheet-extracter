@@ -5,6 +5,7 @@
 echo "Start cronjob"
 # Set paths
 export PYENV_ROOT=~/.pyenv
+export PYENV_VERSION=3.6.10
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:"$PATH"
 export PATH=~/.pyenv/shims:~/.pyenv/bin:"$PATH"
 export PATH="${HOME}/.pyenv/scripts:$PATH"
@@ -13,6 +14,7 @@ eval "$(pyenv virtualenv-init -)"
 echo $PATH
 
 # Searching
+pyenv versions
 whereis pyenv
 whereis pipenv
 python --version
