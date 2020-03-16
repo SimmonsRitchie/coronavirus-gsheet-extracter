@@ -1,14 +1,17 @@
 
 import logging
+from dotenv import load_dotenv
 from logs.config.logging import logs_config
 from coronavirus_gs_extracter.download_sheet import download_sheet
 from coronavirus_gs_extracter.move_to_s3 import move_to_s3
 from coronavirus_gs_extracter.clean import clean_data
 
-
 def main():
 
-    # Begin
+    # Load env vars
+    load_dotenv()
+
+    # Init logging
     logs_config()
     logging.info("Begin program")
 
