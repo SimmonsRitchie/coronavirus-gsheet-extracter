@@ -2,6 +2,7 @@
 data/
 .idea/
 logs/output/
+.env
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
