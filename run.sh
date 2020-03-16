@@ -3,6 +3,7 @@
 # Start
 echo "Start cronjob"
 # Set paths
+export PYENV_ROOT=~/.pyenv
 export PATH=~/.pyenv/shims:~/.pyenv/bin:"$PATH"
 # Start pyenv shell
 pyenv shell 3.6.10
