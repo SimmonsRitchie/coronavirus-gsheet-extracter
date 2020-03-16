@@ -4,7 +4,7 @@ Pulls data from Spotlight PA Coronavirus google sheet and uploads it to Spotligh
 
 #### Requirements
 
-- Python 3.7+
+- Python 3.6+
 
 #### Install
 
