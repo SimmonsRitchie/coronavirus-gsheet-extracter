@@ -1,10 +1,11 @@
 #!/bin/bash
 # Cronjob script
 
-# Set paths
-export PATH=~/.pyenv/shims:~/.pyenv/bin:"$PATH"
+
 # Start
 echo "Start cronjob"
+# Set paths
+export PATH=~/.pyenv/shims:~/.pyenv/bin:"$PATH"
 # Start pyenv shell
 pyenv shell 3.6.10
 # This tells pipenv to use this .env file
