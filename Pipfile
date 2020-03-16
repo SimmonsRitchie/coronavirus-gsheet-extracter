@@ -9,6 +9,7 @@ verify_ssl = true
 pyyaml = "*"
 boto3 = "*"
 python-dotenv = "*"
+requests = "*"
 
 [requires]
 python_version = "3.6"
