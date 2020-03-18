@@ -3,7 +3,8 @@ import logging
 from dotenv import load_dotenv
 from logs.config.logging import logs_config
 from coronavirus_gs_extracter.download_sheet import download_sheet
-from coronavirus_gs_extracter.move_to_s3 import move_to_s3
+from coronavirus_gs_extracter.copy_to_local import copy_to_local
+from coronavirus_gs_extracter.copy_to_s3 import copy_to_s3
 from coronavirus_gs_extracter.clean import clean_data
 
 def main():
@@ -33,8 +34,10 @@ def main():
     clean_data()
 
     for sheet in google_sheets:
-        download_sheet(sheet["name"], sheet["sheet_id"], sheet["gid"])
-        move_to_s3(sheet["name"])
+        output_filename = f"{sheet['name']}.csv"
+        download_sheet(sheet["name"], sheet["sheet_id"], sheet["gid"], output_filename)
+        copy_to_s3(output_filename)
+        copy_to_local(output_filename)
 
 
 if __name__ == '__main__':
