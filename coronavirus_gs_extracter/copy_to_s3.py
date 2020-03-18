@@ -4,8 +4,7 @@ import os
 from definitions import DIR_DATA
 
 
-def move_to_s3(sheet_name):
-    filename = f"{sheet_name}.csv"
+def copy_to_s3(filename):
     logging.info(f"Move {filename} to s3")
     local_file_path = DIR_DATA / filename
 
