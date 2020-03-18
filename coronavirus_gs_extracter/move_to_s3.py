@@ -36,7 +36,14 @@ def move_to_s3(sheet_name):
         s3 = session.resource('s3')
 
         # UPLOAD
-        s3.Bucket(bucket_name).upload_file(source_path, destination_path)
+        s3.Bucket(bucket_name).upload_file(
+            source_path,
+            destination_path,
+            ExtraArgs={
+                'ACL': 'public-read',
+            }
+        )
+
         logging.info(f"file uploaded to {destination_path}")
     except Exception as e:
         logging.error("Something went wrong when attempting to copy file" \
