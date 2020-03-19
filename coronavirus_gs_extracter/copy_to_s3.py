@@ -40,6 +40,8 @@ def copy_to_s3(filename):
             destination_path,
             ExtraArgs={
                 'ACL': 'public-read',
+                'CacheControl': 'proxy-revalidate, max-age=300',
+                'ContentType': 'text/csv'
             }
         )
 
