@@ -28,6 +28,11 @@ def main():
             "sheet_id": sheet_id,
             "gid": "1683428846"
         },
+        {
+            "name": "tests",
+            "sheet_id": sheet_id,
+            "gid": "1161166250"
+        },
     ]
 
     # delete data from previous runs
