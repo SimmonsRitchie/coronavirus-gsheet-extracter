@@ -1,11 +1,14 @@
-
 import logging
+import json
 from dotenv import load_dotenv
+
+from definitions import PATH_CONFIG_GSHEETS
 from logs.config.logging import logs_config
 from coronavirus_gs_extracter.download_sheet import download_sheet
 from coronavirus_gs_extracter.copy_to_local import copy_to_local
 from coronavirus_gs_extracter.copy_to_s3 import copy_to_s3
 from coronavirus_gs_extracter.clean import clean_data
+
 
 def main():
 
@@ -16,34 +19,33 @@ def main():
     logs_config()
     logging.info("Begin program")
 
-    sheet_id = "2PACX-1vScoEuwTZAdLCbmWaoDsxRJcZSovzW-HI8UXlK7LqF-4FVr07pIARzCWoy0xjtlf0Wa5p1U0ZBEVnLQ"
-    google_sheets = [
-        {
-            "name": "cases",
-            "sheet_id": sheet_id,
-            "gid": "0"
-         },
-        {
-            "name": "deaths",
-            "sheet_id": sheet_id,
-            "gid": "1683428846"
-        },
-        {
-            "name": "tests",
-            "sheet_id": sheet_id,
-            "gid": "1161166250"
-        },
-    ]
-
     # delete data from previous runs
     clean_data()
 
-    for sheet in google_sheets:
-        output_filename = f"{sheet['name']}.csv"
-        download_sheet(sheet["name"], sheet["sheet_id"], sheet["gid"], output_filename)
-        copy_to_s3(output_filename)
-        copy_to_local(output_filename)
+    # get google sheet config
+    with open(PATH_CONFIG_GSHEETS) as f:
+        config_sheets = json.load(f)
+
+    for document in config_sheets:
+        sheets = document.get("sheets", [])
+        document_name = document.get("document_name")
+        document_id = document.get("document_id")
+        move_s3 = document.get("move_s3", False)
+        move_local = document.get("move_local", False)
+        logging.info(
+            f"Extracting files from document: {document_name}"
+        )
+        for sheet in sheets:
+            sheet_name = sheet["name"]
+            output_filename = f"{sheet_name}.csv"
+            download_sheet(
+                sheet_name, document_id, sheet["gid"], output_filename
+            )
+            if move_s3:
+                copy_to_s3(output_filename)
+            if move_local:
+                copy_to_local(output_filename)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
