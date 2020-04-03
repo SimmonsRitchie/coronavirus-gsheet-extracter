@@ -29,9 +29,53 @@
     "bucket_dest_dir": "2020/coronavirus/data/test",
     "move_local": false,
     "sheets": [
+                    {
+            "name": "pa-cases",
+            "gid": "0"
+         },
+              {
+            "name": "pa-deaths",
+            "gid": "135258316"
+         },
         {
-            "name": "inq-pa-tests",
+            "name": "pa-tests",
             "gid": "683765717"
+         },
+              {
+            "name": "nj-cases",
+            "gid": "67787112"
+         },
+              {
+            "name": "nj-deaths",
+            "gid": "1227242256"
+         },
+                    {
+            "name": "nj-tests",
+            "gid": "523792905"
+         },
+                    {
+            "name": "de-cases",
+            "gid": "1476680376"
+         },
+                    {
+            "name": "de-deaths",
+            "gid": "1895958367"
+         },
+                    {
+            "name": "de-tests",
+            "gid": "613734438"
+         },
+                    {
+            "name": "phila-cases",
+            "gid": "1538204863"
+         },
+                    {
+            "name": "phila-tests",
+            "gid": "897816979"
+         },
+                    {
+            "name": "phila-deaths",ts""
+            "gid": "670511537"
          }
     ]
   }
