@@ -3,6 +3,7 @@ data/
 .idea/
 logs/output/
 .env
+config/gsheets.json
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
