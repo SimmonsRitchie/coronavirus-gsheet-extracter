@@ -2,8 +2,8 @@
 
 Pulls data from targeted google sheets and uploads data as CSVs to specified AWS S3 accounts and/or local storage.
 
-Set document ID, individual sheet ID and other settings of your target sheets in config/gsheets.json. See gsheets
--example.json for an example of a config file.
+Rename config/gsheets-example.json as config/gsheets.json. Set document ID, individual sheet ID and other settings of
+ your target sheets.
 
 Rename .env.example as .env and insert your AWS credentials, bucket location and related settings.
 
