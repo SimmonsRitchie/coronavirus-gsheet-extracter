@@ -31,18 +31,19 @@ def main():
         document_name = document.get("document_name")
         document_id = document.get("document_id")
         move_s3 = document.get("move_s3", False)
+        bucket_name = document.get("bucket_name", None)
+        bucket_dest_dir = document.get("bucket_dest_dir", None)
         move_local = document.get("move_local", False)
-        logging.info(
-            f"Extracting files from document: {document_name}"
-        )
+        logging.info(f"Extracting files from document: {document_name}")
         for sheet in sheets:
             sheet_name = sheet["name"]
             output_filename = f"{sheet_name}.csv"
-            download_sheet(
-                sheet_name, document_id, sheet["gid"], output_filename
-            )
+            download_sheet(sheet_name, document_id, sheet["gid"], output_filename)
             if move_s3:
-                copy_to_s3(output_filename)
+                if bucket_name and bucket_dest_dir:
+                    copy_to_s3(output_filename, bucket_name, bucket_dest_dir)
+                else:
+                    raise ValueError('Missing bucket_name or bucket_dest_dir')
             if move_local:
                 copy_to_local(output_filename)
 
