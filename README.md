@@ -1,8 +1,11 @@
 ### Coronavirus Google Sheet Extracter
 
-Pulls data from Spotlight PA Coronavirus google sheet and uploads it to specified AWS S3 accounts and/or local storage.
+Pulls data from targeted google sheets and uploads data as CSVs to specified AWS S3 accounts and/or local storage.
 
-Set document ID, individual sheet ID and other settings in config/gsheets.json. 
+Set document ID, individual sheet ID and other settings of your target sheets in config/gsheets.json. See gsheets
+-example.json for an example of a config file.
+
+Rename .env.example as .env and insert your AWS credentials, bucket location and related settings.
 
 #### Requirements
 
