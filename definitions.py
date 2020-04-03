@@ -12,7 +12,9 @@ DIR_LOGS = ROOT_DIR / "logs"  # main dir for log-related files
 DIR_LOGS_OUTPUT = DIR_LOGS / "output"
 DIR_LOGS_CONFIG = DIR_LOGS / "config"
 DIR_DATA = ROOT_DIR / "data"
+DIR_CONFIG = ROOT_DIR / "config"
 
 # PATHS
 PATH_LOGS_CONFIG = DIR_LOGS_CONFIG / "logging.yaml"
 PATH_LOGS_CONFIG_TEST = DIR_LOGS_CONFIG / "logging_test.yaml"
+PATH_CONFIG_GSHEETS = DIR_CONFIG / "gsheets.json"
