@@ -4,7 +4,7 @@ import os
 from definitions import DIR_DATA
 
 
-def copy_to_s3(filename):
+def copy_to_s3(filename, bucket_name, destination_dir):
     logging.info(f"Move {filename} to s3")
     local_file_path = DIR_DATA / filename
 
@@ -18,11 +18,9 @@ def copy_to_s3(filename):
             raise
 
         # GET ENV VARS
-        bucket_name = os.environ.get("BUCKET_NAME")
         keyID = os.environ.get("KEY_ID")
         sKeyID = os.environ.get("SECRET_KEY_ID")
         source_path = str(local_file_path.resolve())
-        destination_dir = os.environ.get("DESTINATION_DIR")
         destination_path = f"{destination_dir}/{filename}"
 
         # LOGGING
