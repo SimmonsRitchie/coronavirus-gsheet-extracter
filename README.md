@@ -24,7 +24,7 @@ The sheet ID is the value indicated by 'gid='. In this case it's "0"
 
 #### Requirements
 
-- Python 3.6+
+- Python 3.6
 
 #### Install
 
