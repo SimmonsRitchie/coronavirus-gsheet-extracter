@@ -1,0 +1,21 @@
+[{
+  "document_name": "spotlight",
+  "document_id": "2PACX-1vScoEuwTZAdLCbmWaoDsxRJcZSovzW-HI8UXlK7LqF-4FVr07pIARzCWoy0xjtlf0Wa5p1U0ZBEVnLQ",
+  "move_s3": true,
+  "move_local": true,
+  "sheets": [
+        {
+            "name": "cases",
+            "gid": "0"
+         },
+        {
+            "name": "deaths",
+            "gid": "1683428846"
+        },
+        {
+            "name": "tests",
+            "gid": "1161166250"
+        }
+  ]
+}]
+
