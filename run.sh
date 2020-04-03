@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-# Cronjob script
+
+# Cronjob script - this shell script is intended to be executed by a cronjob to run the program
+# at regular intervals. If you're NOT setting up this program to run as a cronjob you can ignore this file and
+# simply execute the program as described in the readme.
+
+# If you do wish to set up a cronjob, you can adapt the paths in this script for your own purposes. Check docs/cronjob
+# for more tips about setting up a cronjob.
 
 # Start
 echo "##############################"
