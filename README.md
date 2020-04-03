@@ -3,7 +3,7 @@
 Python script that fetches data from google sheets and uploads data as CSVs to specified AWS S3 accounts and/or
  local storage.
 
-### Set up
+#### Set up
 
 Rename config/gsheets-example.json as config/gsheets.json. Set document ID, individual sheet ID and other settings of
  your target sheets.
@@ -50,9 +50,9 @@ Or:
 ```pipenv run python coronavirus_gs_extracter.py```
 
 
-### FAQ
+#### FAQ
 
-#### How can I find the document ID and sheet ID for my google sheet?
+##### How can I find the document ID and sheet ID for my google sheet?
 
 From your google sheet, select: file > publish to the web
 
