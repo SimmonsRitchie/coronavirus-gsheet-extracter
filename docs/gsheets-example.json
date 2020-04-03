@@ -1,9 +1,12 @@
-[{
-  "document_name": "spotlight",
-  "document_id": "2PACX-1vScoEuwTZAdLCbmWaoDsxRJcZSovzW-HI8UXlK7LqF-4FVr07pIARzCWoy0xjtlf0Wa5p1U0ZBEVnLQ",
-  "move_s3": true,
-  "move_local": true,
-  "sheets": [
+[
+  {
+    "document_name": "spotlight",
+    "document_id": "2PACX-1vScoEuwTZAdLCbmWaoDsxRJcZSovzW-HI8UXlK7LqF-4FVr07pIARzCWoy0xjtlf0Wa5p1U0ZBEVnLQ",
+    "move_s3": true,
+    "bucket_name": "interactives.data.spotlightpa.org",
+    "bucket_dest_dir": "2020/coronavirus/data/pa",
+    "move_local": false,
+    "sheets": [
         {
             "name": "cases",
             "gid": "0"
@@ -17,5 +20,20 @@
             "gid": "1161166250"
         }
   ]
-}]
+},
+  {
+    "document_name": "inquirer",
+    "document_id": "2PACX-1vTroIF64S9MtmUwjdYot3PDUd-fBeBz-Npk8c48lUHQubPq5VBcqZi0GwgHuYzeM26n-7BrjmgO4HpE",
+    "move_s3": true,
+    "bucket_name": "interactives.data.spotlightpa.org",
+    "bucket_dest_dir": "2020/coronavirus/data/test",
+    "move_local": false,
+    "sheets": [
+        {
+            "name": "inq-pa-tests",
+            "gid": "683765717"
+         }
+    ]
+  }
+]
 
