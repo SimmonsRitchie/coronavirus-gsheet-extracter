@@ -8,7 +8,7 @@ from coronavirus_gs_extracter.download_sheet import download_sheet
 from coronavirus_gs_extracter.copy_to_local import copy_to_local
 from coronavirus_gs_extracter.copy_to_s3 import copy_to_s3
 from coronavirus_gs_extracter.clean import clean_data
-
+from time import sleep
 
 def main():
 
@@ -46,7 +46,9 @@ def main():
                     raise ValueError('Missing bucket_name or bucket_dest_dir')
             if move_local:
                 copy_to_local(output_filename)
-
+            logging.info("Sleeping to avoid google rate limiting issues...")
+            sleep(10)
+            logging.info("Waking!")
 
 if __name__ == "__main__":
     main()
